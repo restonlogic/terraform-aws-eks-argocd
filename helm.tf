@@ -13,7 +13,7 @@ resource "helm_release" "argocd" {
   }
 
   values = [
-    yamlencode(var.helm_services[count.index].settings),
-    yamlencode(var.settings)
+    var.helm_services[count.index].settings,
+    var.settings
   ]
 }
