@@ -13,7 +13,6 @@ resource "helm_release" "argocd" {
   }
 
   values = [
-    var.helm_services[count.index].settings,
     var.settings
   ]
 }
